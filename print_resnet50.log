@@ -1,0 +1,1912 @@
+----------------------------------------------------
+Slurm Job ID: 175912
+Running on host: node10
+Start Time: Thu Mar 12 04:13:00 PM EDT 2026
+Experiment 1: Src=0% (0 samples), Tgt=100% (10 samples)
+----------------------------------------------------
+Initializing conda for script...
+Conda environment activated and isolated:
+
+# conda environments:
+#
+# * -> active
+# + -> frozen
+base                     /home1/adoyle2025/miniconda3
+clrernet                 /home1/adoyle2025/miniconda3/envs/clrernet
+distribution_shift_perception     /home1/adoyle2025/miniconda3/envs/distribution_shift_perception
+dslp_env                 /home1/adoyle2025/miniconda3/envs/dslp_env
+lane_env_cpu             /home1/adoyle2025/miniconda3/envs/lane_env_cpu
+lane_perception_test     /home1/adoyle2025/miniconda3/envs/lane_perception_test
+ml_project           *   /home1/adoyle2025/miniconda3/envs/ml_project
+test_env                 /home1/adoyle2025/miniconda3/envs/test_env
+tf_a100                  /home1/adoyle2025/miniconda3/envs/tf_a100
+
+Starting Unit Test...
+2026-03-12 16:13:03.922579: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-03-12 16:13:03.933795: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1773346383.948377  621240 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1773346383.952784  621240 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1773346383.964526  621240 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1773346383.964554  621240 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1773346383.964557  621240 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1773346383.964559  621240 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-03-12 16:13:03.968366: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-12 16:13:13.086646: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+x_train shape: (50000, 32, 32, 3)
+y_train shape: (50000, 10)
+Learning rate: 0.001
+Layer by Layer Summary for: functional
+
+--- Layer 0: input_layer (InputLayer) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 1: conv2d (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 3
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 3)
+    [Filter 1]
+      Shape: (3, 3, 3)
+    [Filter 2]
+      Shape: (3, 3, 3)
+    [Filter 3]
+      Shape: (3, 3, 3)
+    [Filter 4]
+      Shape: (3, 3, 3)
+    [Filter 5]
+      Shape: (3, 3, 3)
+    [Filter 6]
+      Shape: (3, 3, 3)
+    [Filter 7]
+      Shape: (3, 3, 3)
+    [Filter 8]
+      Shape: (3, 3, 3)
+    [Filter 9]
+      Shape: (3, 3, 3)
+    [Filter 10]
+      Shape: (3, 3, 3)
+    [Filter 11]
+      Shape: (3, 3, 3)
+    [Filter 12]
+      Shape: (3, 3, 3)
+    [Filter 13]
+      Shape: (3, 3, 3)
+    [Filter 14]
+      Shape: (3, 3, 3)
+    [Filter 15]
+      Shape: (3, 3, 3)
+
+
+--- Layer 2: batch_normalization (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 3: activation (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 4: conv2d_1 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+
+
+--- Layer 5: batch_normalization_1 (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 6: activation_1 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 7: conv2d_2 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+
+
+--- Layer 8: batch_normalization_2 (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 9: add (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 10: activation_2 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 11: conv2d_3 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+
+
+--- Layer 12: batch_normalization_3 (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 13: activation_3 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 14: conv2d_4 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+
+
+--- Layer 15: batch_normalization_4 (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 16: add_1 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 17: activation_4 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 18: conv2d_5 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+
+
+--- Layer 19: batch_normalization_5 (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 20: activation_5 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 21: conv2d_6 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 16
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+
+
+--- Layer 22: batch_normalization_6 (BatchNormalization) ---
+  -> Weight shape: (16,) (Not a 2D Convolutional filter bank)
+
+--- Layer 23: add_2 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 24: activation_6 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 25: conv2d_7 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (3, 3, 16)
+    [Filter 1]
+      Shape: (3, 3, 16)
+    [Filter 2]
+      Shape: (3, 3, 16)
+    [Filter 3]
+      Shape: (3, 3, 16)
+    [Filter 4]
+      Shape: (3, 3, 16)
+    [Filter 5]
+      Shape: (3, 3, 16)
+    [Filter 6]
+      Shape: (3, 3, 16)
+    [Filter 7]
+      Shape: (3, 3, 16)
+    [Filter 8]
+      Shape: (3, 3, 16)
+    [Filter 9]
+      Shape: (3, 3, 16)
+    [Filter 10]
+      Shape: (3, 3, 16)
+    [Filter 11]
+      Shape: (3, 3, 16)
+    [Filter 12]
+      Shape: (3, 3, 16)
+    [Filter 13]
+      Shape: (3, 3, 16)
+    [Filter 14]
+      Shape: (3, 3, 16)
+    [Filter 15]
+      Shape: (3, 3, 16)
+    [Filter 16]
+      Shape: (3, 3, 16)
+    [Filter 17]
+      Shape: (3, 3, 16)
+    [Filter 18]
+      Shape: (3, 3, 16)
+    [Filter 19]
+      Shape: (3, 3, 16)
+    [Filter 20]
+      Shape: (3, 3, 16)
+    [Filter 21]
+      Shape: (3, 3, 16)
+    [Filter 22]
+      Shape: (3, 3, 16)
+    [Filter 23]
+      Shape: (3, 3, 16)
+    [Filter 24]
+      Shape: (3, 3, 16)
+    [Filter 25]
+      Shape: (3, 3, 16)
+    [Filter 26]
+      Shape: (3, 3, 16)
+    [Filter 27]
+      Shape: (3, 3, 16)
+    [Filter 28]
+      Shape: (3, 3, 16)
+    [Filter 29]
+      Shape: (3, 3, 16)
+    [Filter 30]
+      Shape: (3, 3, 16)
+    [Filter 31]
+      Shape: (3, 3, 16)
+
+
+--- Layer 26: batch_normalization_7 (BatchNormalization) ---
+  -> Weight shape: (32,) (Not a 2D Convolutional filter bank)
+
+--- Layer 27: activation_7 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 28: conv2d_8 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (3, 3, 32)
+    [Filter 1]
+      Shape: (3, 3, 32)
+    [Filter 2]
+      Shape: (3, 3, 32)
+    [Filter 3]
+      Shape: (3, 3, 32)
+    [Filter 4]
+      Shape: (3, 3, 32)
+    [Filter 5]
+      Shape: (3, 3, 32)
+    [Filter 6]
+      Shape: (3, 3, 32)
+    [Filter 7]
+      Shape: (3, 3, 32)
+    [Filter 8]
+      Shape: (3, 3, 32)
+    [Filter 9]
+      Shape: (3, 3, 32)
+    [Filter 10]
+      Shape: (3, 3, 32)
+    [Filter 11]
+      Shape: (3, 3, 32)
+    [Filter 12]
+      Shape: (3, 3, 32)
+    [Filter 13]
+      Shape: (3, 3, 32)
+    [Filter 14]
+      Shape: (3, 3, 32)
+    [Filter 15]
+      Shape: (3, 3, 32)
+    [Filter 16]
+      Shape: (3, 3, 32)
+    [Filter 17]
+      Shape: (3, 3, 32)
+    [Filter 18]
+      Shape: (3, 3, 32)
+    [Filter 19]
+      Shape: (3, 3, 32)
+    [Filter 20]
+      Shape: (3, 3, 32)
+    [Filter 21]
+      Shape: (3, 3, 32)
+    [Filter 22]
+      Shape: (3, 3, 32)
+    [Filter 23]
+      Shape: (3, 3, 32)
+    [Filter 24]
+      Shape: (3, 3, 32)
+    [Filter 25]
+      Shape: (3, 3, 32)
+    [Filter 26]
+      Shape: (3, 3, 32)
+    [Filter 27]
+      Shape: (3, 3, 32)
+    [Filter 28]
+      Shape: (3, 3, 32)
+    [Filter 29]
+      Shape: (3, 3, 32)
+    [Filter 30]
+      Shape: (3, 3, 32)
+    [Filter 31]
+      Shape: (3, 3, 32)
+
+
+--- Layer 29: conv2d_9 (Conv2D) ---
+  -> Filter Dimensions: 1x1
+  -> Input Channels depth: 16
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (1, 1, 16)
+    [Filter 1]
+      Shape: (1, 1, 16)
+    [Filter 2]
+      Shape: (1, 1, 16)
+    [Filter 3]
+      Shape: (1, 1, 16)
+    [Filter 4]
+      Shape: (1, 1, 16)
+    [Filter 5]
+      Shape: (1, 1, 16)
+    [Filter 6]
+      Shape: (1, 1, 16)
+    [Filter 7]
+      Shape: (1, 1, 16)
+    [Filter 8]
+      Shape: (1, 1, 16)
+    [Filter 9]
+      Shape: (1, 1, 16)
+    [Filter 10]
+      Shape: (1, 1, 16)
+    [Filter 11]
+      Shape: (1, 1, 16)
+    [Filter 12]
+      Shape: (1, 1, 16)
+    [Filter 13]
+      Shape: (1, 1, 16)
+    [Filter 14]
+      Shape: (1, 1, 16)
+    [Filter 15]
+      Shape: (1, 1, 16)
+    [Filter 16]
+      Shape: (1, 1, 16)
+    [Filter 17]
+      Shape: (1, 1, 16)
+    [Filter 18]
+      Shape: (1, 1, 16)
+    [Filter 19]
+      Shape: (1, 1, 16)
+    [Filter 20]
+      Shape: (1, 1, 16)
+    [Filter 21]
+      Shape: (1, 1, 16)
+    [Filter 22]
+      Shape: (1, 1, 16)
+    [Filter 23]
+      Shape: (1, 1, 16)
+    [Filter 24]
+      Shape: (1, 1, 16)
+    [Filter 25]
+      Shape: (1, 1, 16)
+    [Filter 26]
+      Shape: (1, 1, 16)
+    [Filter 27]
+      Shape: (1, 1, 16)
+    [Filter 28]
+      Shape: (1, 1, 16)
+    [Filter 29]
+      Shape: (1, 1, 16)
+    [Filter 30]
+      Shape: (1, 1, 16)
+    [Filter 31]
+      Shape: (1, 1, 16)
+
+
+--- Layer 30: batch_normalization_8 (BatchNormalization) ---
+  -> Weight shape: (32,) (Not a 2D Convolutional filter bank)
+
+--- Layer 31: add_3 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 32: activation_8 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 33: conv2d_10 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (3, 3, 32)
+    [Filter 1]
+      Shape: (3, 3, 32)
+    [Filter 2]
+      Shape: (3, 3, 32)
+    [Filter 3]
+      Shape: (3, 3, 32)
+    [Filter 4]
+      Shape: (3, 3, 32)
+    [Filter 5]
+      Shape: (3, 3, 32)
+    [Filter 6]
+      Shape: (3, 3, 32)
+    [Filter 7]
+      Shape: (3, 3, 32)
+    [Filter 8]
+      Shape: (3, 3, 32)
+    [Filter 9]
+      Shape: (3, 3, 32)
+    [Filter 10]
+      Shape: (3, 3, 32)
+    [Filter 11]
+      Shape: (3, 3, 32)
+    [Filter 12]
+      Shape: (3, 3, 32)
+    [Filter 13]
+      Shape: (3, 3, 32)
+    [Filter 14]
+      Shape: (3, 3, 32)
+    [Filter 15]
+      Shape: (3, 3, 32)
+    [Filter 16]
+      Shape: (3, 3, 32)
+    [Filter 17]
+      Shape: (3, 3, 32)
+    [Filter 18]
+      Shape: (3, 3, 32)
+    [Filter 19]
+      Shape: (3, 3, 32)
+    [Filter 20]
+      Shape: (3, 3, 32)
+    [Filter 21]
+      Shape: (3, 3, 32)
+    [Filter 22]
+      Shape: (3, 3, 32)
+    [Filter 23]
+      Shape: (3, 3, 32)
+    [Filter 24]
+      Shape: (3, 3, 32)
+    [Filter 25]
+      Shape: (3, 3, 32)
+    [Filter 26]
+      Shape: (3, 3, 32)
+    [Filter 27]
+      Shape: (3, 3, 32)
+    [Filter 28]
+      Shape: (3, 3, 32)
+    [Filter 29]
+      Shape: (3, 3, 32)
+    [Filter 30]
+      Shape: (3, 3, 32)
+    [Filter 31]
+      Shape: (3, 3, 32)
+
+
+--- Layer 34: batch_normalization_9 (BatchNormalization) ---
+  -> Weight shape: (32,) (Not a 2D Convolutional filter bank)
+
+--- Layer 35: activation_9 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 36: conv2d_11 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (3, 3, 32)
+    [Filter 1]
+      Shape: (3, 3, 32)
+    [Filter 2]
+      Shape: (3, 3, 32)
+    [Filter 3]
+      Shape: (3, 3, 32)
+    [Filter 4]
+      Shape: (3, 3, 32)
+    [Filter 5]
+      Shape: (3, 3, 32)
+    [Filter 6]
+      Shape: (3, 3, 32)
+    [Filter 7]
+      Shape: (3, 3, 32)
+    [Filter 8]
+      Shape: (3, 3, 32)
+    [Filter 9]
+      Shape: (3, 3, 32)
+    [Filter 10]
+      Shape: (3, 3, 32)
+    [Filter 11]
+      Shape: (3, 3, 32)
+    [Filter 12]
+      Shape: (3, 3, 32)
+    [Filter 13]
+      Shape: (3, 3, 32)
+    [Filter 14]
+      Shape: (3, 3, 32)
+    [Filter 15]
+      Shape: (3, 3, 32)
+    [Filter 16]
+      Shape: (3, 3, 32)
+    [Filter 17]
+      Shape: (3, 3, 32)
+    [Filter 18]
+      Shape: (3, 3, 32)
+    [Filter 19]
+      Shape: (3, 3, 32)
+    [Filter 20]
+      Shape: (3, 3, 32)
+    [Filter 21]
+      Shape: (3, 3, 32)
+    [Filter 22]
+      Shape: (3, 3, 32)
+    [Filter 23]
+      Shape: (3, 3, 32)
+    [Filter 24]
+      Shape: (3, 3, 32)
+    [Filter 25]
+      Shape: (3, 3, 32)
+    [Filter 26]
+      Shape: (3, 3, 32)
+    [Filter 27]
+      Shape: (3, 3, 32)
+    [Filter 28]
+      Shape: (3, 3, 32)
+    [Filter 29]
+      Shape: (3, 3, 32)
+    [Filter 30]
+      Shape: (3, 3, 32)
+    [Filter 31]
+      Shape: (3, 3, 32)
+
+
+--- Layer 37: batch_normalization_10 (BatchNormalization) ---
+  -> Weight shape: (32,) (Not a 2D Convolutional filter bank)
+
+--- Layer 38: add_4 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 39: activation_10 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 40: conv2d_12 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (3, 3, 32)
+    [Filter 1]
+      Shape: (3, 3, 32)
+    [Filter 2]
+      Shape: (3, 3, 32)
+    [Filter 3]
+      Shape: (3, 3, 32)
+    [Filter 4]
+      Shape: (3, 3, 32)
+    [Filter 5]
+      Shape: (3, 3, 32)
+    [Filter 6]
+      Shape: (3, 3, 32)
+    [Filter 7]
+      Shape: (3, 3, 32)
+    [Filter 8]
+      Shape: (3, 3, 32)
+    [Filter 9]
+      Shape: (3, 3, 32)
+    [Filter 10]
+      Shape: (3, 3, 32)
+    [Filter 11]
+      Shape: (3, 3, 32)
+    [Filter 12]
+      Shape: (3, 3, 32)
+    [Filter 13]
+      Shape: (3, 3, 32)
+    [Filter 14]
+      Shape: (3, 3, 32)
+    [Filter 15]
+      Shape: (3, 3, 32)
+    [Filter 16]
+      Shape: (3, 3, 32)
+    [Filter 17]
+      Shape: (3, 3, 32)
+    [Filter 18]
+      Shape: (3, 3, 32)
+    [Filter 19]
+      Shape: (3, 3, 32)
+    [Filter 20]
+      Shape: (3, 3, 32)
+    [Filter 21]
+      Shape: (3, 3, 32)
+    [Filter 22]
+      Shape: (3, 3, 32)
+    [Filter 23]
+      Shape: (3, 3, 32)
+    [Filter 24]
+      Shape: (3, 3, 32)
+    [Filter 25]
+      Shape: (3, 3, 32)
+    [Filter 26]
+      Shape: (3, 3, 32)
+    [Filter 27]
+      Shape: (3, 3, 32)
+    [Filter 28]
+      Shape: (3, 3, 32)
+    [Filter 29]
+      Shape: (3, 3, 32)
+    [Filter 30]
+      Shape: (3, 3, 32)
+    [Filter 31]
+      Shape: (3, 3, 32)
+
+
+--- Layer 41: batch_normalization_11 (BatchNormalization) ---
+  -> Weight shape: (32,) (Not a 2D Convolutional filter bank)
+
+--- Layer 42: activation_11 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 43: conv2d_13 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 32
+
+    [Filter 0]
+      Shape: (3, 3, 32)
+    [Filter 1]
+      Shape: (3, 3, 32)
+    [Filter 2]
+      Shape: (3, 3, 32)
+    [Filter 3]
+      Shape: (3, 3, 32)
+    [Filter 4]
+      Shape: (3, 3, 32)
+    [Filter 5]
+      Shape: (3, 3, 32)
+    [Filter 6]
+      Shape: (3, 3, 32)
+    [Filter 7]
+      Shape: (3, 3, 32)
+    [Filter 8]
+      Shape: (3, 3, 32)
+    [Filter 9]
+      Shape: (3, 3, 32)
+    [Filter 10]
+      Shape: (3, 3, 32)
+    [Filter 11]
+      Shape: (3, 3, 32)
+    [Filter 12]
+      Shape: (3, 3, 32)
+    [Filter 13]
+      Shape: (3, 3, 32)
+    [Filter 14]
+      Shape: (3, 3, 32)
+    [Filter 15]
+      Shape: (3, 3, 32)
+    [Filter 16]
+      Shape: (3, 3, 32)
+    [Filter 17]
+      Shape: (3, 3, 32)
+    [Filter 18]
+      Shape: (3, 3, 32)
+    [Filter 19]
+      Shape: (3, 3, 32)
+    [Filter 20]
+      Shape: (3, 3, 32)
+    [Filter 21]
+      Shape: (3, 3, 32)
+    [Filter 22]
+      Shape: (3, 3, 32)
+    [Filter 23]
+      Shape: (3, 3, 32)
+    [Filter 24]
+      Shape: (3, 3, 32)
+    [Filter 25]
+      Shape: (3, 3, 32)
+    [Filter 26]
+      Shape: (3, 3, 32)
+    [Filter 27]
+      Shape: (3, 3, 32)
+    [Filter 28]
+      Shape: (3, 3, 32)
+    [Filter 29]
+      Shape: (3, 3, 32)
+    [Filter 30]
+      Shape: (3, 3, 32)
+    [Filter 31]
+      Shape: (3, 3, 32)
+
+
+--- Layer 44: batch_normalization_12 (BatchNormalization) ---
+  -> Weight shape: (32,) (Not a 2D Convolutional filter bank)
+
+--- Layer 45: add_5 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 46: activation_12 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 47: conv2d_14 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (3, 3, 32)
+    [Filter 1]
+      Shape: (3, 3, 32)
+    [Filter 2]
+      Shape: (3, 3, 32)
+    [Filter 3]
+      Shape: (3, 3, 32)
+    [Filter 4]
+      Shape: (3, 3, 32)
+    [Filter 5]
+      Shape: (3, 3, 32)
+    [Filter 6]
+      Shape: (3, 3, 32)
+    [Filter 7]
+      Shape: (3, 3, 32)
+    [Filter 8]
+      Shape: (3, 3, 32)
+    [Filter 9]
+      Shape: (3, 3, 32)
+    [Filter 10]
+      Shape: (3, 3, 32)
+    [Filter 11]
+      Shape: (3, 3, 32)
+    [Filter 12]
+      Shape: (3, 3, 32)
+    [Filter 13]
+      Shape: (3, 3, 32)
+    [Filter 14]
+      Shape: (3, 3, 32)
+    [Filter 15]
+      Shape: (3, 3, 32)
+    [Filter 16]
+      Shape: (3, 3, 32)
+    [Filter 17]
+      Shape: (3, 3, 32)
+    [Filter 18]
+      Shape: (3, 3, 32)
+    [Filter 19]
+      Shape: (3, 3, 32)
+    [Filter 20]
+      Shape: (3, 3, 32)
+    [Filter 21]
+      Shape: (3, 3, 32)
+    [Filter 22]
+      Shape: (3, 3, 32)
+    [Filter 23]
+      Shape: (3, 3, 32)
+    [Filter 24]
+      Shape: (3, 3, 32)
+    [Filter 25]
+      Shape: (3, 3, 32)
+    [Filter 26]
+      Shape: (3, 3, 32)
+    [Filter 27]
+      Shape: (3, 3, 32)
+    [Filter 28]
+      Shape: (3, 3, 32)
+    [Filter 29]
+      Shape: (3, 3, 32)
+    [Filter 30]
+      Shape: (3, 3, 32)
+    [Filter 31]
+      Shape: (3, 3, 32)
+    [Filter 32]
+      Shape: (3, 3, 32)
+    [Filter 33]
+      Shape: (3, 3, 32)
+    [Filter 34]
+      Shape: (3, 3, 32)
+    [Filter 35]
+      Shape: (3, 3, 32)
+    [Filter 36]
+      Shape: (3, 3, 32)
+    [Filter 37]
+      Shape: (3, 3, 32)
+    [Filter 38]
+      Shape: (3, 3, 32)
+    [Filter 39]
+      Shape: (3, 3, 32)
+    [Filter 40]
+      Shape: (3, 3, 32)
+    [Filter 41]
+      Shape: (3, 3, 32)
+    [Filter 42]
+      Shape: (3, 3, 32)
+    [Filter 43]
+      Shape: (3, 3, 32)
+    [Filter 44]
+      Shape: (3, 3, 32)
+    [Filter 45]
+      Shape: (3, 3, 32)
+    [Filter 46]
+      Shape: (3, 3, 32)
+    [Filter 47]
+      Shape: (3, 3, 32)
+    [Filter 48]
+      Shape: (3, 3, 32)
+    [Filter 49]
+      Shape: (3, 3, 32)
+    [Filter 50]
+      Shape: (3, 3, 32)
+    [Filter 51]
+      Shape: (3, 3, 32)
+    [Filter 52]
+      Shape: (3, 3, 32)
+    [Filter 53]
+      Shape: (3, 3, 32)
+    [Filter 54]
+      Shape: (3, 3, 32)
+    [Filter 55]
+      Shape: (3, 3, 32)
+    [Filter 56]
+      Shape: (3, 3, 32)
+    [Filter 57]
+      Shape: (3, 3, 32)
+    [Filter 58]
+      Shape: (3, 3, 32)
+    [Filter 59]
+      Shape: (3, 3, 32)
+    [Filter 60]
+      Shape: (3, 3, 32)
+    [Filter 61]
+      Shape: (3, 3, 32)
+    [Filter 62]
+      Shape: (3, 3, 32)
+    [Filter 63]
+      Shape: (3, 3, 32)
+
+
+--- Layer 48: batch_normalization_13 (BatchNormalization) ---
+  -> Weight shape: (64,) (Not a 2D Convolutional filter bank)
+
+--- Layer 49: activation_13 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 50: conv2d_15 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 64
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (3, 3, 64)
+    [Filter 1]
+      Shape: (3, 3, 64)
+    [Filter 2]
+      Shape: (3, 3, 64)
+    [Filter 3]
+      Shape: (3, 3, 64)
+    [Filter 4]
+      Shape: (3, 3, 64)
+    [Filter 5]
+      Shape: (3, 3, 64)
+    [Filter 6]
+      Shape: (3, 3, 64)
+    [Filter 7]
+      Shape: (3, 3, 64)
+    [Filter 8]
+      Shape: (3, 3, 64)
+    [Filter 9]
+      Shape: (3, 3, 64)
+    [Filter 10]
+      Shape: (3, 3, 64)
+    [Filter 11]
+      Shape: (3, 3, 64)
+    [Filter 12]
+      Shape: (3, 3, 64)
+    [Filter 13]
+      Shape: (3, 3, 64)
+    [Filter 14]
+      Shape: (3, 3, 64)
+    [Filter 15]
+      Shape: (3, 3, 64)
+    [Filter 16]
+      Shape: (3, 3, 64)
+    [Filter 17]
+      Shape: (3, 3, 64)
+    [Filter 18]
+      Shape: (3, 3, 64)
+    [Filter 19]
+      Shape: (3, 3, 64)
+    [Filter 20]
+      Shape: (3, 3, 64)
+    [Filter 21]
+      Shape: (3, 3, 64)
+    [Filter 22]
+      Shape: (3, 3, 64)
+    [Filter 23]
+      Shape: (3, 3, 64)
+    [Filter 24]
+      Shape: (3, 3, 64)
+    [Filter 25]
+      Shape: (3, 3, 64)
+    [Filter 26]
+      Shape: (3, 3, 64)
+    [Filter 27]
+      Shape: (3, 3, 64)
+    [Filter 28]
+      Shape: (3, 3, 64)
+    [Filter 29]
+      Shape: (3, 3, 64)
+    [Filter 30]
+      Shape: (3, 3, 64)
+    [Filter 31]
+      Shape: (3, 3, 64)
+    [Filter 32]
+      Shape: (3, 3, 64)
+    [Filter 33]
+      Shape: (3, 3, 64)
+    [Filter 34]
+      Shape: (3, 3, 64)
+    [Filter 35]
+      Shape: (3, 3, 64)
+    [Filter 36]
+      Shape: (3, 3, 64)
+    [Filter 37]
+      Shape: (3, 3, 64)
+    [Filter 38]
+      Shape: (3, 3, 64)
+    [Filter 39]
+      Shape: (3, 3, 64)
+    [Filter 40]
+      Shape: (3, 3, 64)
+    [Filter 41]
+      Shape: (3, 3, 64)
+    [Filter 42]
+      Shape: (3, 3, 64)
+    [Filter 43]
+      Shape: (3, 3, 64)
+    [Filter 44]
+      Shape: (3, 3, 64)
+    [Filter 45]
+      Shape: (3, 3, 64)
+    [Filter 46]
+      Shape: (3, 3, 64)
+    [Filter 47]
+      Shape: (3, 3, 64)
+    [Filter 48]
+      Shape: (3, 3, 64)
+    [Filter 49]
+      Shape: (3, 3, 64)
+    [Filter 50]
+      Shape: (3, 3, 64)
+    [Filter 51]
+      Shape: (3, 3, 64)
+    [Filter 52]
+      Shape: (3, 3, 64)
+    [Filter 53]
+      Shape: (3, 3, 64)
+    [Filter 54]
+      Shape: (3, 3, 64)
+    [Filter 55]
+      Shape: (3, 3, 64)
+    [Filter 56]
+      Shape: (3, 3, 64)
+    [Filter 57]
+      Shape: (3, 3, 64)
+    [Filter 58]
+      Shape: (3, 3, 64)
+    [Filter 59]
+      Shape: (3, 3, 64)
+    [Filter 60]
+      Shape: (3, 3, 64)
+    [Filter 61]
+      Shape: (3, 3, 64)
+    [Filter 62]
+      Shape: (3, 3, 64)
+    [Filter 63]
+      Shape: (3, 3, 64)
+
+
+--- Layer 51: conv2d_16 (Conv2D) ---
+  -> Filter Dimensions: 1x1
+  -> Input Channels depth: 32
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (1, 1, 32)
+    [Filter 1]
+      Shape: (1, 1, 32)
+    [Filter 2]
+      Shape: (1, 1, 32)
+    [Filter 3]
+      Shape: (1, 1, 32)
+    [Filter 4]
+      Shape: (1, 1, 32)
+    [Filter 5]
+      Shape: (1, 1, 32)
+    [Filter 6]
+      Shape: (1, 1, 32)
+    [Filter 7]
+      Shape: (1, 1, 32)
+    [Filter 8]
+      Shape: (1, 1, 32)
+    [Filter 9]
+      Shape: (1, 1, 32)
+    [Filter 10]
+      Shape: (1, 1, 32)
+    [Filter 11]
+      Shape: (1, 1, 32)
+    [Filter 12]
+      Shape: (1, 1, 32)
+    [Filter 13]
+      Shape: (1, 1, 32)
+    [Filter 14]
+      Shape: (1, 1, 32)
+    [Filter 15]
+      Shape: (1, 1, 32)
+    [Filter 16]
+      Shape: (1, 1, 32)
+    [Filter 17]
+      Shape: (1, 1, 32)
+    [Filter 18]
+      Shape: (1, 1, 32)
+    [Filter 19]
+      Shape: (1, 1, 32)
+    [Filter 20]
+      Shape: (1, 1, 32)
+    [Filter 21]
+      Shape: (1, 1, 32)
+    [Filter 22]
+      Shape: (1, 1, 32)
+    [Filter 23]
+      Shape: (1, 1, 32)
+    [Filter 24]
+      Shape: (1, 1, 32)
+    [Filter 25]
+      Shape: (1, 1, 32)
+    [Filter 26]
+      Shape: (1, 1, 32)
+    [Filter 27]
+      Shape: (1, 1, 32)
+    [Filter 28]
+      Shape: (1, 1, 32)
+    [Filter 29]
+      Shape: (1, 1, 32)
+    [Filter 30]
+      Shape: (1, 1, 32)
+    [Filter 31]
+      Shape: (1, 1, 32)
+    [Filter 32]
+      Shape: (1, 1, 32)
+    [Filter 33]
+      Shape: (1, 1, 32)
+    [Filter 34]
+      Shape: (1, 1, 32)
+    [Filter 35]
+      Shape: (1, 1, 32)
+    [Filter 36]
+      Shape: (1, 1, 32)
+    [Filter 37]
+      Shape: (1, 1, 32)
+    [Filter 38]
+      Shape: (1, 1, 32)
+    [Filter 39]
+      Shape: (1, 1, 32)
+    [Filter 40]
+      Shape: (1, 1, 32)
+    [Filter 41]
+      Shape: (1, 1, 32)
+    [Filter 42]
+      Shape: (1, 1, 32)
+    [Filter 43]
+      Shape: (1, 1, 32)
+    [Filter 44]
+      Shape: (1, 1, 32)
+    [Filter 45]
+      Shape: (1, 1, 32)
+    [Filter 46]
+      Shape: (1, 1, 32)
+    [Filter 47]
+      Shape: (1, 1, 32)
+    [Filter 48]
+      Shape: (1, 1, 32)
+    [Filter 49]
+      Shape: (1, 1, 32)
+    [Filter 50]
+      Shape: (1, 1, 32)
+    [Filter 51]
+      Shape: (1, 1, 32)
+    [Filter 52]
+      Shape: (1, 1, 32)
+    [Filter 53]
+      Shape: (1, 1, 32)
+    [Filter 54]
+      Shape: (1, 1, 32)
+    [Filter 55]
+      Shape: (1, 1, 32)
+    [Filter 56]
+      Shape: (1, 1, 32)
+    [Filter 57]
+      Shape: (1, 1, 32)
+    [Filter 58]
+      Shape: (1, 1, 32)
+    [Filter 59]
+      Shape: (1, 1, 32)
+    [Filter 60]
+      Shape: (1, 1, 32)
+    [Filter 61]
+      Shape: (1, 1, 32)
+    [Filter 62]
+      Shape: (1, 1, 32)
+    [Filter 63]
+      Shape: (1, 1, 32)
+
+
+--- Layer 52: batch_normalization_14 (BatchNormalization) ---
+  -> Weight shape: (64,) (Not a 2D Convolutional filter bank)
+
+--- Layer 53: add_6 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 54: activation_14 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 55: conv2d_17 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 64
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (3, 3, 64)
+    [Filter 1]
+      Shape: (3, 3, 64)
+    [Filter 2]
+      Shape: (3, 3, 64)
+    [Filter 3]
+      Shape: (3, 3, 64)
+    [Filter 4]
+      Shape: (3, 3, 64)
+    [Filter 5]
+      Shape: (3, 3, 64)
+    [Filter 6]
+      Shape: (3, 3, 64)
+    [Filter 7]
+      Shape: (3, 3, 64)
+    [Filter 8]
+      Shape: (3, 3, 64)
+    [Filter 9]
+      Shape: (3, 3, 64)
+    [Filter 10]
+      Shape: (3, 3, 64)
+    [Filter 11]
+      Shape: (3, 3, 64)
+    [Filter 12]
+      Shape: (3, 3, 64)
+    [Filter 13]
+      Shape: (3, 3, 64)
+    [Filter 14]
+      Shape: (3, 3, 64)
+    [Filter 15]
+      Shape: (3, 3, 64)
+    [Filter 16]
+      Shape: (3, 3, 64)
+    [Filter 17]
+      Shape: (3, 3, 64)
+    [Filter 18]
+      Shape: (3, 3, 64)
+    [Filter 19]
+      Shape: (3, 3, 64)
+    [Filter 20]
+      Shape: (3, 3, 64)
+    [Filter 21]
+      Shape: (3, 3, 64)
+    [Filter 22]
+      Shape: (3, 3, 64)
+    [Filter 23]
+      Shape: (3, 3, 64)
+    [Filter 24]
+      Shape: (3, 3, 64)
+    [Filter 25]
+      Shape: (3, 3, 64)
+    [Filter 26]
+      Shape: (3, 3, 64)
+    [Filter 27]
+      Shape: (3, 3, 64)
+    [Filter 28]
+      Shape: (3, 3, 64)
+    [Filter 29]
+      Shape: (3, 3, 64)
+    [Filter 30]
+      Shape: (3, 3, 64)
+    [Filter 31]
+      Shape: (3, 3, 64)
+    [Filter 32]
+      Shape: (3, 3, 64)
+    [Filter 33]
+      Shape: (3, 3, 64)
+    [Filter 34]
+      Shape: (3, 3, 64)
+    [Filter 35]
+      Shape: (3, 3, 64)
+    [Filter 36]
+      Shape: (3, 3, 64)
+    [Filter 37]
+      Shape: (3, 3, 64)
+    [Filter 38]
+      Shape: (3, 3, 64)
+    [Filter 39]
+      Shape: (3, 3, 64)
+    [Filter 40]
+      Shape: (3, 3, 64)
+    [Filter 41]
+      Shape: (3, 3, 64)
+    [Filter 42]
+      Shape: (3, 3, 64)
+    [Filter 43]
+      Shape: (3, 3, 64)
+    [Filter 44]
+      Shape: (3, 3, 64)
+    [Filter 45]
+      Shape: (3, 3, 64)
+    [Filter 46]
+      Shape: (3, 3, 64)
+    [Filter 47]
+      Shape: (3, 3, 64)
+    [Filter 48]
+      Shape: (3, 3, 64)
+    [Filter 49]
+      Shape: (3, 3, 64)
+    [Filter 50]
+      Shape: (3, 3, 64)
+    [Filter 51]
+      Shape: (3, 3, 64)
+    [Filter 52]
+      Shape: (3, 3, 64)
+    [Filter 53]
+      Shape: (3, 3, 64)
+    [Filter 54]
+      Shape: (3, 3, 64)
+    [Filter 55]
+      Shape: (3, 3, 64)
+    [Filter 56]
+      Shape: (3, 3, 64)
+    [Filter 57]
+      Shape: (3, 3, 64)
+    [Filter 58]
+      Shape: (3, 3, 64)
+    [Filter 59]
+      Shape: (3, 3, 64)
+    [Filter 60]
+      Shape: (3, 3, 64)
+    [Filter 61]
+      Shape: (3, 3, 64)
+    [Filter 62]
+      Shape: (3, 3, 64)
+    [Filter 63]
+      Shape: (3, 3, 64)
+
+
+--- Layer 56: batch_normalization_15 (BatchNormalization) ---
+  -> Weight shape: (64,) (Not a 2D Convolutional filter bank)
+
+--- Layer 57: activation_15 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 58: conv2d_18 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 64
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (3, 3, 64)
+    [Filter 1]
+      Shape: (3, 3, 64)
+    [Filter 2]
+      Shape: (3, 3, 64)
+    [Filter 3]
+      Shape: (3, 3, 64)
+    [Filter 4]
+      Shape: (3, 3, 64)
+    [Filter 5]
+      Shape: (3, 3, 64)
+    [Filter 6]
+      Shape: (3, 3, 64)
+    [Filter 7]
+      Shape: (3, 3, 64)
+    [Filter 8]
+      Shape: (3, 3, 64)
+    [Filter 9]
+      Shape: (3, 3, 64)
+    [Filter 10]
+      Shape: (3, 3, 64)
+    [Filter 11]
+      Shape: (3, 3, 64)
+    [Filter 12]
+      Shape: (3, 3, 64)
+    [Filter 13]
+      Shape: (3, 3, 64)
+    [Filter 14]
+      Shape: (3, 3, 64)
+    [Filter 15]
+      Shape: (3, 3, 64)
+    [Filter 16]
+      Shape: (3, 3, 64)
+    [Filter 17]
+      Shape: (3, 3, 64)
+    [Filter 18]
+      Shape: (3, 3, 64)
+    [Filter 19]
+      Shape: (3, 3, 64)
+    [Filter 20]
+      Shape: (3, 3, 64)
+    [Filter 21]
+      Shape: (3, 3, 64)
+    [Filter 22]
+      Shape: (3, 3, 64)
+    [Filter 23]
+      Shape: (3, 3, 64)
+    [Filter 24]
+      Shape: (3, 3, 64)
+    [Filter 25]
+      Shape: (3, 3, 64)
+    [Filter 26]
+      Shape: (3, 3, 64)
+    [Filter 27]
+      Shape: (3, 3, 64)
+    [Filter 28]
+      Shape: (3, 3, 64)
+    [Filter 29]
+      Shape: (3, 3, 64)
+    [Filter 30]
+      Shape: (3, 3, 64)
+    [Filter 31]
+      Shape: (3, 3, 64)
+    [Filter 32]
+      Shape: (3, 3, 64)
+    [Filter 33]
+      Shape: (3, 3, 64)
+    [Filter 34]
+      Shape: (3, 3, 64)
+    [Filter 35]
+      Shape: (3, 3, 64)
+    [Filter 36]
+      Shape: (3, 3, 64)
+    [Filter 37]
+      Shape: (3, 3, 64)
+    [Filter 38]
+      Shape: (3, 3, 64)
+    [Filter 39]
+      Shape: (3, 3, 64)
+    [Filter 40]
+      Shape: (3, 3, 64)
+    [Filter 41]
+      Shape: (3, 3, 64)
+    [Filter 42]
+      Shape: (3, 3, 64)
+    [Filter 43]
+      Shape: (3, 3, 64)
+    [Filter 44]
+      Shape: (3, 3, 64)
+    [Filter 45]
+      Shape: (3, 3, 64)
+    [Filter 46]
+      Shape: (3, 3, 64)
+    [Filter 47]
+      Shape: (3, 3, 64)
+    [Filter 48]
+      Shape: (3, 3, 64)
+    [Filter 49]
+      Shape: (3, 3, 64)
+    [Filter 50]
+      Shape: (3, 3, 64)
+    [Filter 51]
+      Shape: (3, 3, 64)
+    [Filter 52]
+      Shape: (3, 3, 64)
+    [Filter 53]
+      Shape: (3, 3, 64)
+    [Filter 54]
+      Shape: (3, 3, 64)
+    [Filter 55]
+      Shape: (3, 3, 64)
+    [Filter 56]
+      Shape: (3, 3, 64)
+    [Filter 57]
+      Shape: (3, 3, 64)
+    [Filter 58]
+      Shape: (3, 3, 64)
+    [Filter 59]
+      Shape: (3, 3, 64)
+    [Filter 60]
+      Shape: (3, 3, 64)
+    [Filter 61]
+      Shape: (3, 3, 64)
+    [Filter 62]
+      Shape: (3, 3, 64)
+    [Filter 63]
+      Shape: (3, 3, 64)
+
+
+--- Layer 59: batch_normalization_16 (BatchNormalization) ---
+  -> Weight shape: (64,) (Not a 2D Convolutional filter bank)
+
+--- Layer 60: add_7 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 61: activation_16 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 62: conv2d_19 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 64
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (3, 3, 64)
+    [Filter 1]
+      Shape: (3, 3, 64)
+    [Filter 2]
+      Shape: (3, 3, 64)
+    [Filter 3]
+      Shape: (3, 3, 64)
+    [Filter 4]
+      Shape: (3, 3, 64)
+    [Filter 5]
+      Shape: (3, 3, 64)
+    [Filter 6]
+      Shape: (3, 3, 64)
+    [Filter 7]
+      Shape: (3, 3, 64)
+    [Filter 8]
+      Shape: (3, 3, 64)
+    [Filter 9]
+      Shape: (3, 3, 64)
+    [Filter 10]
+      Shape: (3, 3, 64)
+    [Filter 11]
+      Shape: (3, 3, 64)
+    [Filter 12]
+      Shape: (3, 3, 64)
+    [Filter 13]
+      Shape: (3, 3, 64)
+    [Filter 14]
+      Shape: (3, 3, 64)
+    [Filter 15]
+      Shape: (3, 3, 64)
+    [Filter 16]
+      Shape: (3, 3, 64)
+    [Filter 17]
+      Shape: (3, 3, 64)
+    [Filter 18]
+      Shape: (3, 3, 64)
+    [Filter 19]
+      Shape: (3, 3, 64)
+    [Filter 20]
+      Shape: (3, 3, 64)
+    [Filter 21]
+      Shape: (3, 3, 64)
+    [Filter 22]
+      Shape: (3, 3, 64)
+    [Filter 23]
+      Shape: (3, 3, 64)
+    [Filter 24]
+      Shape: (3, 3, 64)
+    [Filter 25]
+      Shape: (3, 3, 64)
+    [Filter 26]
+      Shape: (3, 3, 64)
+    [Filter 27]
+      Shape: (3, 3, 64)
+    [Filter 28]
+      Shape: (3, 3, 64)
+    [Filter 29]
+      Shape: (3, 3, 64)
+    [Filter 30]
+      Shape: (3, 3, 64)
+    [Filter 31]
+      Shape: (3, 3, 64)
+    [Filter 32]
+      Shape: (3, 3, 64)
+    [Filter 33]
+      Shape: (3, 3, 64)
+    [Filter 34]
+      Shape: (3, 3, 64)
+    [Filter 35]
+      Shape: (3, 3, 64)
+    [Filter 36]
+      Shape: (3, 3, 64)
+    [Filter 37]
+      Shape: (3, 3, 64)
+    [Filter 38]
+      Shape: (3, 3, 64)
+    [Filter 39]
+      Shape: (3, 3, 64)
+    [Filter 40]
+      Shape: (3, 3, 64)
+    [Filter 41]
+      Shape: (3, 3, 64)
+    [Filter 42]
+      Shape: (3, 3, 64)
+    [Filter 43]
+      Shape: (3, 3, 64)
+    [Filter 44]
+      Shape: (3, 3, 64)
+    [Filter 45]
+      Shape: (3, 3, 64)
+    [Filter 46]
+      Shape: (3, 3, 64)
+    [Filter 47]
+      Shape: (3, 3, 64)
+    [Filter 48]
+      Shape: (3, 3, 64)
+    [Filter 49]
+      Shape: (3, 3, 64)
+    [Filter 50]
+      Shape: (3, 3, 64)
+    [Filter 51]
+      Shape: (3, 3, 64)
+    [Filter 52]
+      Shape: (3, 3, 64)
+    [Filter 53]
+      Shape: (3, 3, 64)
+    [Filter 54]
+      Shape: (3, 3, 64)
+    [Filter 55]
+      Shape: (3, 3, 64)
+    [Filter 56]
+      Shape: (3, 3, 64)
+    [Filter 57]
+      Shape: (3, 3, 64)
+    [Filter 58]
+      Shape: (3, 3, 64)
+    [Filter 59]
+      Shape: (3, 3, 64)
+    [Filter 60]
+      Shape: (3, 3, 64)
+    [Filter 61]
+      Shape: (3, 3, 64)
+    [Filter 62]
+      Shape: (3, 3, 64)
+    [Filter 63]
+      Shape: (3, 3, 64)
+
+
+--- Layer 63: batch_normalization_17 (BatchNormalization) ---
+  -> Weight shape: (64,) (Not a 2D Convolutional filter bank)
+
+--- Layer 64: activation_17 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 65: conv2d_20 (Conv2D) ---
+  -> Filter Dimensions: 3x3
+  -> Input Channels depth: 64
+  -> Total Filters (Output Channels): 64
+
+    [Filter 0]
+      Shape: (3, 3, 64)
+    [Filter 1]
+      Shape: (3, 3, 64)
+    [Filter 2]
+      Shape: (3, 3, 64)
+    [Filter 3]
+      Shape: (3, 3, 64)
+    [Filter 4]
+      Shape: (3, 3, 64)
+    [Filter 5]
+      Shape: (3, 3, 64)
+    [Filter 6]
+      Shape: (3, 3, 64)
+    [Filter 7]
+      Shape: (3, 3, 64)
+    [Filter 8]
+      Shape: (3, 3, 64)
+    [Filter 9]
+      Shape: (3, 3, 64)
+    [Filter 10]
+      Shape: (3, 3, 64)
+    [Filter 11]
+      Shape: (3, 3, 64)
+    [Filter 12]
+      Shape: (3, 3, 64)
+    [Filter 13]
+      Shape: (3, 3, 64)
+    [Filter 14]
+      Shape: (3, 3, 64)
+    [Filter 15]
+      Shape: (3, 3, 64)
+    [Filter 16]
+      Shape: (3, 3, 64)
+    [Filter 17]
+      Shape: (3, 3, 64)
+    [Filter 18]
+      Shape: (3, 3, 64)
+    [Filter 19]
+      Shape: (3, 3, 64)
+    [Filter 20]
+      Shape: (3, 3, 64)
+    [Filter 21]
+      Shape: (3, 3, 64)
+    [Filter 22]
+      Shape: (3, 3, 64)
+    [Filter 23]
+      Shape: (3, 3, 64)
+    [Filter 24]
+      Shape: (3, 3, 64)
+    [Filter 25]
+      Shape: (3, 3, 64)
+    [Filter 26]
+      Shape: (3, 3, 64)
+    [Filter 27]
+      Shape: (3, 3, 64)
+    [Filter 28]
+      Shape: (3, 3, 64)
+    [Filter 29]
+      Shape: (3, 3, 64)
+    [Filter 30]
+      Shape: (3, 3, 64)
+    [Filter 31]
+      Shape: (3, 3, 64)
+    [Filter 32]
+      Shape: (3, 3, 64)
+    [Filter 33]
+      Shape: (3, 3, 64)
+    [Filter 34]
+      Shape: (3, 3, 64)
+    [Filter 35]
+      Shape: (3, 3, 64)
+    [Filter 36]
+      Shape: (3, 3, 64)
+    [Filter 37]
+      Shape: (3, 3, 64)
+    [Filter 38]
+      Shape: (3, 3, 64)
+    [Filter 39]
+      Shape: (3, 3, 64)
+    [Filter 40]
+      Shape: (3, 3, 64)
+    [Filter 41]
+      Shape: (3, 3, 64)
+    [Filter 42]
+      Shape: (3, 3, 64)
+    [Filter 43]
+      Shape: (3, 3, 64)
+    [Filter 44]
+      Shape: (3, 3, 64)
+    [Filter 45]
+      Shape: (3, 3, 64)
+    [Filter 46]
+      Shape: (3, 3, 64)
+    [Filter 47]
+      Shape: (3, 3, 64)
+    [Filter 48]
+      Shape: (3, 3, 64)
+    [Filter 49]
+      Shape: (3, 3, 64)
+    [Filter 50]
+      Shape: (3, 3, 64)
+    [Filter 51]
+      Shape: (3, 3, 64)
+    [Filter 52]
+      Shape: (3, 3, 64)
+    [Filter 53]
+      Shape: (3, 3, 64)
+    [Filter 54]
+      Shape: (3, 3, 64)
+    [Filter 55]
+      Shape: (3, 3, 64)
+    [Filter 56]
+      Shape: (3, 3, 64)
+    [Filter 57]
+      Shape: (3, 3, 64)
+    [Filter 58]
+      Shape: (3, 3, 64)
+    [Filter 59]
+      Shape: (3, 3, 64)
+    [Filter 60]
+      Shape: (3, 3, 64)
+    [Filter 61]
+      Shape: (3, 3, 64)
+    [Filter 62]
+      Shape: (3, 3, 64)
+    [Filter 63]
+      Shape: (3, 3, 64)
+
+
+--- Layer 66: batch_normalization_18 (BatchNormalization) ---
+  -> Weight shape: (64,) (Not a 2D Convolutional filter bank)
+
+--- Layer 67: add_8 (Add) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 68: activation_18 (Activation) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 69: average_pooling2d (AveragePooling2D) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 70: flatten (Flatten) ---
+  -> No learnable filters/weights in this layer.
+
+--- Layer 71: dense (Dense) ---
+  -> Weight shape: (64, 10) (Not a 2D Convolutional filter bank)
+
+----------------------------------------------------
+Job finished: Thu Mar 12 04:13:20 PM EDT 2026
+----------------------------------------------------
