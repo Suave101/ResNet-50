@@ -9,16 +9,15 @@ The structural foundation and coding approach for this implementation were guide
 ## 🚀 Key Features
 
 * **Custom Implementation:** Built ResNet-20 from the ground up using `[TensorFlow / Keras]`.
-* **Bottleneck Architecture:** Correctly implemented the 1x1, 3x3, and 1x1 convolutional bottleneck blocks to optimize computation.
+* **Simple Architecture:** Correctly implemented the 3x3 convolutional simple blocks.
 * **Skip Connections:** Integrated identity and projection shortcuts to ensure smooth gradient flow across 20 layers.
 * **Custom Training Loop:** Includes modular scripts for training, validation, and evaluation.
 
 ## 🏗️ Architecture Highlights
 
-ResNet-20 utilizes **Residual Blocks** to allow the training of incredibly deep networks. Instead of hoping each few stacked layers directly fit a desired underlying mapping, these blocks are explicitly allowed to fit a residual mapping.
+ResNet-20 utilizes **Residual Blocks** to allow the training of deep networks. Instead of hoping each few stacked layers directly fit a desired underlying mapping, these blocks are explicitly allowed to fit a residual mapping.
 
 * **Conv1:** 7x7 convolution, 64 filters, stride 2, followed by max pooling.
-* **Conv2_x to Conv5_x:** Stacks of bottleneck residual blocks (3, 4, 6, and 3 blocks respectively).
 * **Output:** Global Average Pooling followed by a Fully Connected layer for classification.
 
 ## 📂 Repository Structure
@@ -42,8 +41,8 @@ ResNet-20 utilizes **Residual Blocks** to allow the training of incredibly deep 
 **1. Clone the repository:**
 
 ```bash
-git clone https://github.com/[YourUsername]/[YourRepoName].git
-cd [YourRepoName]
+git clone https://github.com/Suave101/ResNet-20.git
+cd ResNet-20
 
 ```
 
@@ -73,8 +72,6 @@ python test.py --weights_path checkpoints/best_model.pth
 * **Dataset:** Trained and evaluated on the `[CIFAR-10]`.
 * **Performance:** Achieved an accuracy of **[XX.X]%** on the test set.
 
-*(Optional: Add images of your training/validation loss and accuracy curves here to make the portfolio piece more visual.)*
-
 ## 💡 Learnings & Takeaways
 
 Through building this project, I solidified my understanding of:
@@ -87,4 +84,5 @@ Through building this project, I solidified my understanding of:
 
 **Alexander Doyle**
 
-* [LinkedIn](https://linkedin.com/in/)
+* [LinkedIn](https://www.linkedin.com/in/alexander-doyle-a7a790245/)
+* 
