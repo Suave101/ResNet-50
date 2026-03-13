@@ -85,4 +85,3 @@ Through building this project, I solidified my understanding of:
 **Alexander Doyle**
 
 * [LinkedIn](https://www.linkedin.com/in/alexander-doyle-a7a790245/)
-* 
